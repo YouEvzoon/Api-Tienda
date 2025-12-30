@@ -1,10 +1,10 @@
 const env = {
   database: 'postgres',
   username: 'postgres',
-  password: 'ControlVentas2025',
-  host: 'aws-1-us-east-1.pooler.supabase.com', // Cambiado para usar Transaction Pooler
+  password: 'ControlVentas2025', // Contraseña actual
+  host: 'aws-1-us-east-1.pooler.supabase.com', // Host del Transaction Pooler
   dialect: 'postgres',
-  port: 6543, // Cambiado para usar el puerto del Transaction Pooler
+  port: 6543, // Puerto del Transaction Pooler
   pool: {
     max: 5,
     min: 0,
