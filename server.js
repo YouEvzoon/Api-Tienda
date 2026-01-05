@@ -37,10 +37,10 @@ const upload = multer({ storage: storage });
 app.use('/uploads', express.static('uploads'));
 
 app.use(bodyParser.json());
-app.use('/', router);
 app.get("/", (req, res) => {
   res.json({ message: "Bienvenido a la API Tienda La Colmenita" });
 });
+app.use('/', router);
 
 // Create a Server
 const server = app.listen(8080, function () {
