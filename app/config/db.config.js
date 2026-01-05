@@ -1,5 +1,3 @@
-
-
 const env = require('./env.js');
  
 const Sequelize = require('sequelize');
@@ -12,13 +10,11 @@ const sequelize = new Sequelize(env.database, env.username, env.password, {
       rejectUnauthorized: false
     }
   },
-  operatorsAliases: false,
- 
   pool: {
-    max: env.max,
-    min: env.pool.min,
-    acquire: env.pool.acquire,
-    idle: env.pool.idle,
+    max: env.pool.max || 5,
+    min: env.pool.min || 0,
+    acquire: env.pool.acquire || 30000,
+    idle: env.pool.idle || 10000
   }
 });
 

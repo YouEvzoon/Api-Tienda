@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const app = express();
 
@@ -9,8 +7,10 @@ const db = require('./app/config/db.config.js');
   
 // force: true will drop the table if it already exists
 db.sequelize.sync({force: false}).then(() => {
-  console.log('Drop and Resync with { force: true }');
-}); 
+  console.log('Database synchronized successfully');
+}).catch((error) => {
+  console.error('Error synchronizing database:', error);
+});
 
 let router = require('./app/routers/productos.routers.js');
 
