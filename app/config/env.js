@@ -1,10 +1,10 @@
 const env = {
   database: 'postgres',
-  username: 'postgres',
+  username: 'postgres.hgmlpzebonemneevknrg',
   password: 'ControlVentas2025', // Contraseña actual
-  host: 'aws-1-us-east-1.pooler.supabase.com', // Host del Session Pooler
+  host: 'aws-1-us-east-1.pooler.supabase.com', // Host del Transaction Pooler
   dialect: 'postgres',
-  port: 5432, // Puerto del Session Pooler
+  port: 6543, // Puerto del Transaction Pooler
   pool: {
     max: 5,
     min: 0,
