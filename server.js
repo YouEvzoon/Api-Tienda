@@ -13,6 +13,9 @@ db.sequelize.sync({force: false}).then(() => {
 });
 
 let router = require('./app/routers/productos.routers.js');
+const usuariosRouter = require('./app/routers/usuarios.routers.js');
+const ventasRouter = require('./app/routers/ventas.routers.js');
+const detalleVentasRouter = require('./app/routers/detalleventas.routers.js');
 
 const cors = require('cors')
 const corsOptions = {
@@ -41,6 +44,9 @@ app.get("/", (req, res) => {
   res.json({ message: "Bienvenido a la API Tienda La Colmenita" });
 });
 app.use('/', router);
+app.use('/usuarios', usuariosRouter);
+app.use('/ventas', ventasRouter);
+app.use('/detalleventas', detalleVentasRouter);
 
 // Create a Server
 const server = app.listen(8080, function () {
